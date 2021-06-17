@@ -1,0 +1,12 @@
+# indicate this is the root of the project
+root = true
+
+[*]
+charset = utf-8
+trim_trailing_whitespace = true
+tab_width = 2
+indent_size = space
+indent_style = space
+
+[*.html]
+tab_width = 2

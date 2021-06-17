@@ -1,6 +1,6 @@
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue';
 
-export default function useInputAction(props, { emit, root }) {
+export default function useInputAction(props, { emit }) {
   const inputRef = ref();
   const isShowClear = ref(false);
 
@@ -11,32 +11,32 @@ export default function useInputAction(props, { emit, root }) {
   // 输入框内容变化时触发
   const handleInput = (e) => {
     const { value } = e.target;
-    props.clearable && (isShowClear.value = value ? true : false);
+    props.clearable && (isShowClear.value = !!value);
 
-    emit("update:modelValue", value);
+    emit('update:modelValue', value);
   };
 
   // 输入框获得焦点时触发
   const handleFocus = (e) => {
     const { value } = e.target;
-    props.clearable && (isShowClear.value = value ? true : false);
+    props.clearable && (isShowClear.value = !!value);
 
-    emit("focus", e);
+    emit('focus', e);
   };
 
   // 输入框失去焦点时触发
   const handleBlur = (e) => {
     props.clearable && (isShowClear.value = false);
 
-    emit("blur", e);
+    emit('blur', e);
   };
 
-  // 	点击清除按钮后触发
+  // 点击清除按钮后触发
   const handleClear = () => {
     props.clearable && (isShowClear.value = false);
 
-    emit("update:modelValue", "");
-    emit("clear");
+    emit('update:modelValue', '');
+    emit('clear');
   };
 
   return {

@@ -6,22 +6,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import EInput from '../packages/input/EInput.vue'
+import { defineComponent } from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+import EInput from '../packages/input/EInput.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
-    EInput
+    EInput,
   },
   data() {
     return {
-      value: ''
-    }
-  }
-})
+      value: '',
+    };
+  },
+});
 </script>
 
 <style>

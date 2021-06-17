@@ -25,19 +25,19 @@
 </template>
 
 <script>
-import useInputAction from "../_hooks/useInputAction";
+import useInputAction from '../_hooks/useInputAction';
 
 export default {
-  name: "EInput",
+  name: 'EInput',
   props: {
     modelValue: [String, Number],
     type: {
       type: String,
-      default: "text",
+      default: 'text',
     },
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     }, // 占位提示文字
     shape: String, // 搜索框形状，可选值为 round
     background: String, // 搜索框外部背景色
@@ -69,7 +69,7 @@ export default {
       handleClear,
     };
   },
-  emits: ["update:modelValue", "clear", "focus", "blur"],
+  emits: ['update:modelValue', 'clear', 'focus', 'blur'],
 };
 </script>
 
