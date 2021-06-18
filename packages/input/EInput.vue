@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import useInputAction from '../_hooks/useInputAction';
+import useInputAction from '../_hooks/useInputAction.ts';
 
 export default {
   name: 'EInput',
