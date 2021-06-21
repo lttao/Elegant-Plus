@@ -3,18 +3,22 @@
   <HelloWorld msg="msg" />
 
   <e-input v-model="value" />
+
+  <EButton>按钮</EButton>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import EInput from '../packages/input/Input.vue';
+import EButton from '../packages/button/Button.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
     EInput,
+    EButton,
   },
   data() {
     return {
