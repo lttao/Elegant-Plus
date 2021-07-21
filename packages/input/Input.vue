@@ -19,8 +19,8 @@
       v-show="isShowClear"
       @touchstart.stop="handleClear"
       @mousedown.stop="handleClear"
-      >关闭</i
-    >
+      class="eg-icon eg-guanbi"
+    ></i>
   </div>
 </template>
 
@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../_assets/iconfont/iconfont.css';
 .eg-input {
   width: 100%;
   height: 40px;
