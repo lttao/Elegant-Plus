@@ -19,7 +19,7 @@
       v-show="isShowClear"
       @touchstart.stop="handleClear"
       @mousedown.stop="handleClear"
-      class="eg-icon eg-guanbi"
+      class="eg-input_clear eg-icon eg-guanbi"
     ></i>
   </div>
 </template>
@@ -73,13 +73,14 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../_assets/iconfont/iconfont.css';
+@import '../_styles/theme.scss';
 .eg-input {
   width: 100%;
   height: 40px;
   border-radius: 2px;
-  background: red;
+  background-color: transparent;
   box-sizing: border-box;
   padding: 0 10px;
   display: flex;
@@ -87,17 +88,17 @@ export default {
   &_input {
     margin: 0;
     flex: 1;
-    background: none;
+    background-color: transparent;
     outline: none;
     border: none;
     padding: 0;
     line-height: inherit;
     font-size: 14px;
-    color: #323233;
+    color: var(--eg-gradient-red);
     &::-webkit-input-placeholder {
       line-height: inherit;
       font-size: 14px;
-      color: #c8c9cc;
+      color: var(--eg-gray-4);
     }
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
@@ -105,6 +106,9 @@ export default {
     &::-webkit-search-results-decoration {
       display: none;
     }
+  }
+  &_clear {
+    color: var(--eg-gray-4);
   }
 }
 </style>
