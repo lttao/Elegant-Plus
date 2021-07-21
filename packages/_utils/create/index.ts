@@ -1,5 +1,5 @@
 interface createNamespace {
-    prefixedName: string
+  prefixedName: string
 }
 
 export function createNamespace(name: string): createNamespace {

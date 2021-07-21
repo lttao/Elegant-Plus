@@ -1,30 +1,56 @@
 <template>
-    <button :style="getStyle()" :class="classes">
-        <slot />
-    </button>
+    <button @click="handleClick"></button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { createNamespace } from '../_utils/create/index.ts';
+import { defineComponent, PropType } from 'vue';
+import type { Size, Type } from './src/interface'
+import { createNamespace } from '../_utils/create/index';
 
 const { prefixedName: name } = createNamespace('button');
 
+const buttonProps = {
+  color: String,
+  text: Boolean,
+  block: Boolean,
+  loading: Boolean,
+  disabled: Boolean,
+  circle: Boolean,
+  size: String as PropType<Size>,
+  ghost: Boolean,
+  round: Boolean,
+  focusable: {
+    type: Boolean,
+    default: true,
+  },
+  keyboard: {
+    type: Boolean,
+    default: true,
+  },
+  type: {
+    type: String as PropType<Type>,
+    default: 'default',
+  },
+  dashed: Boolean,
+  bordered: {
+    type: Boolean,
+    default: true,
+  },
+};
+
 export default defineComponent({
   name,
-  props: {
-    icon: String,
-    color: String,
-
-  },
-  setup(props) {
-    const getStyle = () => ({
-      color: props.color,
-    });
+  props: buttonProps,
+  setup(props, { emit }) {
+    const handleClick = (e: MouseEvent): void => {
+      e.preventDefault()
+      if (props.disabled) return
+      emit('click', e)
+    }
 
     return {
-      getStyle,
-    };
+      handleClick
+    }
   },
 });
 </script>
