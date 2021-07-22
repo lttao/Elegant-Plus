@@ -1,5 +1,5 @@
 <template>
-    <button @click="handleClick"></button>
+  <button @click="handleClick"></button>
 </template>
 
 <script lang="ts">

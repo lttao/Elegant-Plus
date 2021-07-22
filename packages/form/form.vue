@@ -12,6 +12,7 @@ export default defineComponent({
   name,
   setup() {},
 });
+
 </script>
 
 <style lang="scss" scoped>
