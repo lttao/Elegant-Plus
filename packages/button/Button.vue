@@ -5,10 +5,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import type { Size, Type } from './src/interface'
-import { createNamespace } from '../_utils/create/index';
+import { createNamespace } from '../_utils';
 
 const { prefixedName: name } = createNamespace('button');
-
 const buttonProps = {
   color: String,
   text: Boolean,
@@ -56,5 +55,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import './index.scss'
+@import './src/index.scss'
 </style>

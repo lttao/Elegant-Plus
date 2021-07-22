@@ -8,6 +8,9 @@ module.exports = {
   plugins: ['vue'],
   rules: {
     // 自己写一些想配置的规则
+    'import/extensions': ['error', 'always', {
+      js: 'never', ts: 'never', tsx: 'never', vue: 'never',
+    }],
   },
   overrides: [
     {
@@ -19,4 +22,12 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+
+  },
 };

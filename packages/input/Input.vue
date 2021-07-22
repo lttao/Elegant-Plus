@@ -25,10 +25,16 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import useInputAction from '../_hooks/useInputAction.ts';
+import { createNamespace } from '../_utils';
 
-export default {
-  name: 'EgInput',
+const { prefixedName: name } = createNamespace('input');
+
+console.log('name', name);
+
+export default defineComponent({
+  name,
   props: {
     modelValue: [String, Number],
     type: {
@@ -70,45 +76,10 @@ export default {
     };
   },
   emits: ['update:modelValue', 'clear', 'focus', 'blur'],
-};
+});
 </script>
 
 <style lang="scss">
 @import '../_assets/iconfont/iconfont.css';
-@import '../_styles/theme.scss';
-.eg-input {
-  width: 100%;
-  height: 40px;
-  border-radius: 2px;
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  &_input {
-    margin: 0;
-    flex: 1;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    padding: 0;
-    line-height: inherit;
-    font-size: 14px;
-    color: var(--eg-gradient-red);
-    &::-webkit-input-placeholder {
-      line-height: inherit;
-      font-size: 14px;
-      color: var(--eg-gray-4);
-    }
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-decoration,
-    &::-webkit-search-results-button,
-    &::-webkit-search-results-decoration {
-      display: none;
-    }
-  }
-  &_clear {
-    color: var(--eg-gray-4);
-  }
-}
+@import './src/index.scss'
 </style>

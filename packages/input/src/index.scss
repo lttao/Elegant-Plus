@@ -1,0 +1,37 @@
+
+@import '../../_styles/theme.scss';
+.eg-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 2px;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  &_input {
+    margin: 0;
+    flex: 1;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    line-height: inherit;
+    font-size: 14px;
+    color: var(--eg-gradient-red);
+    &::-webkit-input-placeholder {
+      line-height: inherit;
+      font-size: 14px;
+      color: var(--eg-gray-4);
+    }
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+  &_clear {
+    color: var(--eg-gray-4);
+  }
+}
